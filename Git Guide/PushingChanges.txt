@@ -1,0 +1,15 @@
+0) Makes changes locally 
+
+1) git add <files> : This command will add the changes to our git repository.
+(git add . ) : This will add all the changes 
+
+
+After we have made our changes, we need to commit them. 
+
+Committing is a bit like versioning, we group together our changes 
+	into versions.
+
+
+2)git commit -m "message to be added with version" 
+
+3)git push 
