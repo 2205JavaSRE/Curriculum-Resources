@@ -1,0 +1,18 @@
+Git:
+
+Git is a distributed version control software.
+Git allows us to share code between multiple sources and manage it without causing version clashes. 
+
+GitHub or GitLab allow us to host our git repositories online. 
+
+git status: tell you the status of your repository. See if there's any changes and if those changes are set to be staged. 
+
+git add : "add" our changes that we made locally, to be packaged into a new version. 
+
+git commit : versions our repsitory. 
+
+git push : will be adding our changes to our local repostiroy into the remote repository. 
+
+git clone : clone a remote repository onto our local systems
+
+git pull : update our local repostiroy to reflect the changes in the remote repository
