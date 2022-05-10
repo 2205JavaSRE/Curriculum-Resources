@@ -1,8 +1,10 @@
 
 //A class is a blueprint for an object
 //A class may contain states and behaviors, and how to create itself (constructor)
-//
-class Car{
+
+package garage;
+
+public class Car{
 	//How to create itself?
 	//Every class in Java has a constructor, whether we provide one or not!
 	// The JVM will provide a constructor if it does NOT see one present. 
@@ -26,10 +28,10 @@ class Car{
 
 	//states of an objects
 	
-	int numberOfWheels;
-	double mileage;
-	boolean isCool;
-	String name;
+	public int numberOfWheels;
+	public double mileage;
+	public boolean isCool;
+	public String name;
 
 	//behaviors of an object
 	//What the object can do, once it's created. 

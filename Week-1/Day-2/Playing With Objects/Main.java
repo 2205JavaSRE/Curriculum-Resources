@@ -1,22 +1,28 @@
 //This class will just contain the main method 
 
+//The import statement declares that when we use the keyword "Car"
+//We mean "Car from the garage package"
+
 import garage.Car;
+import garage.*;
 
 public class Main{
 
 	public static void main(String[] args){
-		Car myToyota = new Car("Toyota Corolla");
+		garage.Car myToyota = new garage.Car("Toyota Corolla");
 		myToyota.isCool = true; //All cars will have a state defining whether they are cool or not. 
 		myToyota.mileage = 1000;
 		//myToyota.name = "My favorite car"; 
 		//myToyota.name = "My 2nd favorite car";
 
 		
-		Car myTesla = new Car("Tesla 3");
+		garage.Car myTesla = new garage.Car("Tesla 3");
 		myTesla.isCool = false;
 		myTesla.mileage = 10001;
 		//myTesla.name = "borrowed from elon";
 		//myTesla.flyingAbility = true; //This will not work, because we haven't defined it in the class
+
+		othergarage.Car myOtherCar = new othergarage.Car();
 
 		System.out.println("my Tesla is " + myTesla.isCool);
 		System.out.println("my Toyota is " + myToyota.isCool);
