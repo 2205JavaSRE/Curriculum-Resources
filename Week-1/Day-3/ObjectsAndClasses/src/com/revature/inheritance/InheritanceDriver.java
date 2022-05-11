@@ -2,6 +2,27 @@ package com.revature.inheritance;
 
 public class InheritanceDriver {
 	
+	/*
+	 * Inheritance: 
+	 * 
+	 * Is one of the most important aspects of OOP. Allows us to inherit methods and
+	 * variables from parent classes. 
+	 * 
+	 * Why is this useful?
+	 * 	Promotes code reuse. 
+	 * 
+	 * For homogenous inheritance, we use the keyword: "extends"
+	 * class -> class
+	 * 
+	 * Java does not have support for multiple class inheritance. So
+	 * 	A class will not have multiple parents. But there is multilevel inheritance 
+	 * 	support. 
+	 * 	A -> B -> C
+	 * 	C gets access to both B's and A's methods and variables. 
+	 * 	B gets access to A's variables and methods 
+	 * 	A does not have access to B or C's methods anx variables. 
+	 */
+	
 	
 	public static void main(String[] args) {
 		
