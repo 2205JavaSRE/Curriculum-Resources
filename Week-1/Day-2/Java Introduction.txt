@@ -1,0 +1,36 @@
+What is Java?
+	Application to convert wording into machine code. 
+	Programming language 
+	First compiled into bytecode and then interpreted by the JVM 
+	Platform Agnostic 
+	Object Oriented Programming language (OOP)
+
+	General purpose programming language that has support for OOP. 
+	It is a compiled language with strongly typed syntax. 
+
+
+What are the features of Java?
+	Java is simple: 
+		Simple to learn and easy to read. If you're familiar with 
+		C or C++, it can be fairly easy to pick up. 
+
+	Java is OOP: 
+		Fully OOP, with all the features and all the advatanges (and the disadvantages)
+
+	Java is robust: 
+		Java has the garbage collector, which simplifies memory management
+		(no pointers)
+
+	Java is secure:
+		Due to lack of manual memory management and no accessing out of bounds 
+		array means there is less chance of a secrutiy flaw such as stack corruption. 
+
+	Java is platform independent: 
+		Write once, run anywhere (WORA). Anything that has a JVM can run java code. 
+		Thankfully a lot of things can hold a jvm. 
+
+	Java is open source: 
+		Lots of tools and IDEs
+		Many frameworks 
+		Open source libraries 
+		Lots and lots of documentation. 

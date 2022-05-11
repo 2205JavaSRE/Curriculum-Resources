@@ -1,0 +1,26 @@
+
+Primitives: 
+	What a primitve is
+	Primitives vs Object
+	8 types of primitives 
+
+Object and Class: 
+	Object vs Class
+	Behaviors 
+	States 
+	High level concept of a constructor
+
+Method syntax
+Import and Packages
+
+Control Flow Statements: 
+	For loop 
+	while loop 
+	if else if and else 
+	switch (why it does not accept double?)
+	do while 
+	enhanced for loop 
+
+Array:
+	Basic of an array 
+	Immutable (in size)?? 
