@@ -1,0 +1,45 @@
+Java Arrays:
+	
+	An array is a structure that stores variables of same type. 
+
+	Syntax: 
+		There are 2 ways to DECLARE an array:
+		int myArray[];
+		int[] myArray;
+
+		There are 2 ways to DECLARE an array and POPULATE it:
+
+		Version 1: //Directly populating it
+			String[] myArray = {"Apple","Banana","Kiwi"};
+			
+		Version 2: //Create an array with empty values and then assign values
+			String[] = myArray;	//declaring an array
+			myArray = new String[3]; //Allocating to memory
+			myArray[0] = "Apple";
+			myArray[1] = "Banana";
+			myArray[2] = "Kiwi";
+
+		Creating multidimensional arrays:
+		
+		int[][] myArray = {{1},{1,2,3,4},{1,2}};
+			
+
+	Properties:
+		Arrays themselves are objects (direct child of Object class)
+		Index starts at 0
+		
+
+	Methods assoicated with Array:
+	
+	Finding the lenght of an array:		myArray.length
+	Accessing a value at an index:		myArray[n];
+	Looping through an array:	
+			for (int i = 0; i< myArray.length;i++){
+				System.out.println(myArray[0]);
+			}
+
+			//or with an enhanced loop
+
+			for (String i: myArray){
+				System.out.println(i);
+			}

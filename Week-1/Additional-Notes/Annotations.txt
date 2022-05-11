@@ -1,0 +1,15 @@
+Annotations
+
+	A tag that represents metadata , attached with class, interface,
+	methods or fields. The infromation is used by the compiler and
+	the JVM. 
+
+	When we move onto Hibernate and Spring, it can serve as an 
+	alternative for XML interfaces.
+
+	Built-In Java Annotations:
+	@Override - ensures that a parent class' method is being overriden.
+		If we do a spelling mistake, then an exception will be 
+		thrown. 
+	@SuppressWarnings - suppresses warning from the compiler, such as 
+		a deprecated warning. 

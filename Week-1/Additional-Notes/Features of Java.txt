@@ -1,0 +1,25 @@
+Features of Java:
+
+	Java is simple:
+		Simple to learn and easy to read. Removes the complexities from other languages
+		like C++/C, e.g. garbage collection and pointers.
+
+	Java is OOP:
+		Fully OOP, with all the features and all the advantages
+
+	Java is robust:
+		Automatic garbage collection and simple memory management (no pointers)
+
+	Java is secure:
+		Due to a lack of manual memory management and no accessing out of bounds array
+		means less chances of security flaws occuring, such as stack corruption.
+
+	Java is platform independent:
+		Write once, run anywhere (WORA). Anything that has a JVM can run java code, 
+		thankfully a lot of things can hold a JVM. 
+
+	Java is open source:
+		Lot of tools and IDEs
+		Many frameworks 
+		Open source libraries 
+		Lots and lots of documentation.

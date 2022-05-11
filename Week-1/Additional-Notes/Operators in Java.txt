@@ -1,0 +1,36 @@
+Operators in Java
+
+	Arithmitic Operators 
+	(x,y)
+	+ : Addition
+	- : Substraction 
+	* : Multiplication 
+	/ : Division 
+	% : Modulus, returns the remainder of a division between x and y
+	(x)
+	++: Increment, will increase the value of x by 1
+	--: Decrement, will decrease the value of x by 1 
+
+	Assignment Operators 
+	(x,y)
+	= : Assings a variable to be equal to the value of the right
+	+= : Adds in addition to the original value 
+	-= : Deducts from the orignial value 
+	*= : multiplies the original value 
+	/= : divides the original value by 3 
+	%= : returns the remainder of original value divided by the right value 
+
+
+	Compairson Operators 
+
+	== : Equal to 
+	!= : Not equal to 
+	> : Greater than
+	< : Less than 
+	>= : Greater than or equal to 
+	<= : Less than or equal to 
+
+	Java Logical operators:
+	&&: Returns true if both statements are true 
+	||: Returns true if one of the statements are true 
+	! : Returns the opposite value 

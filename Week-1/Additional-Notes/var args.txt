@@ -1,0 +1,19 @@
+Variable-length arguments (Var args):
+
+	When you want a method to take a variable amount of arguments you use
+	Var-args. This is better than creating a otn of overloaded methods that
+	take different arguments.
+
+	Syntax:
+		void myMethod(int ... a){
+		}
+	//The method will accept any amounts of integers into the arguments
+
+	NOTE:
+	Very similar to:
+
+		void myMethod2(int[] args){
+		}
+
+	//This is a older style of Java code (before JDK 5)
+	//Essentially is identical to var args but it var args automates and hides the process.

@@ -1,0 +1,18 @@
+Stack vs Heap:
+	Difference between both and what is stored
+	Reference vs Primitve variable 
+	Pass by reference vs pass by value
+
+OOP:
+	Inheritance
+		What we inherit from parent
+		what we DONT inherit from parent
+		Keyword(s) required to inherit
+	Polymorphism
+		Overriding
+		Overloading
+	Encapsulation
+		Access Modifiers 
+		Getters and Setters
+	Abstraction
+		Interface

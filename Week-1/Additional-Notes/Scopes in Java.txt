@@ -1,0 +1,30 @@
+Scope of a variable 
+
+	Class Scope:
+		Variable can be referenced anywhere within the class
+
+		public class myClass{
+			String myVar = "This can be used anywhere";
+		}
+
+	Method Scope:
+		Variables can only be referenced within the method 
+
+		public class myClass{
+			static void myMethod(){
+				String myVar = "This is only available within the method";
+			}
+
+			public static void main(Strin[] args){
+				System.out.println(myVar); //This will cause an exception
+			}
+	Loop Scope :
+		Variables can only be referenced within block
+			
+			int i;
+			for(int j = 0;j<10;j++){
+				i = j;
+			}
+			System.out.println(i) // will result in null;
+
+	

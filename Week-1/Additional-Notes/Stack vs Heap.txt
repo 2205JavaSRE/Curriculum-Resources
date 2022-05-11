@@ -1,0 +1,17 @@
+Stack vs Heap 
+
+	Memory in Java can be either stored in the stack or the heap.
+	
+	Size vs speed:
+		Stack has a much smaller capacity than Heap memory.
+		Quicker retrieval of memory from stack compared to Heap.
+
+	What is stored in both?
+		Stack contains local primitive variables and reference variables to objects.
+		The heap contains objecs (and pretty much everything else).
+	
+	Use cases?
+		Stack is used by a thread, memory is only accessible to the thread using it.
+			Stack memory is cleared once the thread is finished using it.
+		Heap is globally accessible to the system (i.e. all threads) and the memory 
+			is not cleared until the application is closed. 

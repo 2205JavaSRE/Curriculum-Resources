@@ -1,0 +1,18 @@
+Access Modifiers:
+
+	Access modifiers can be used before a class, method or variable. This specifies what systems can have access outside the class.
+	4 access modifiers:
+	
+	public: 
+		The resource is available to anyone and anything.
+
+	private:
+		This resource is only available to the class itself.
+
+	protected:
+		This resource is only available to other resources within the same package or to classes that extend the class. 
+
+	(Implicit) default:
+		This resource is only available to classes within the same package. If you don't specify a access modifer it will automatically
+		assume the default access modifier. 
+

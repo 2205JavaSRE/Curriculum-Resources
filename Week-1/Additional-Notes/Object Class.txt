@@ -1,0 +1,16 @@
+Object Class:
+
+	Every class in Java is derived from the Object class. If a class does not extend any other class, it is directly a child class otherwise 
+	it is indirectly a child class. (It can be viewed as the root of inheritance hieracy)
+
+	This results in every class having access to the Object class' methods, here are some of them:
+
+	toString(): provides a string representation of an Object
+
+	hashCode(): generates a unique number which is hash code. JVM saves objects using hashcode because it's more efficient. 
+
+	equals(Object obj): Compares the original object to "obj"
+
+	getClass() : Returns the class of "this" object
+	
+	finalize(): the block of logic that can be executed before it's removed by the GC.

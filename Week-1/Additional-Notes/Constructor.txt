@@ -1,0 +1,45 @@
+Constructors:
+
+	A constructor is a special method that is used to instantiate an object, however it
+	doesn't have a return type. A constructor is called when an object is created, it's 
+	invoked by the "new" keyword.
+ 
+	The types of constructors:
+
+	(Implicit) Default constructor:
+		Even if a class doesn't have an explicit constructor written, there'll be 
+		a constructor provided by the JVM during compile time. (It's identical to
+		the no-args method signature but with no body).
+
+	No-args constructor:
+		No argument is passed through the no-args constructor, the key difference 
+		between the default constructor is that the no-args constructor allows us 
+		execute custom logic.
+
+	class MyClass{
+		
+		String example;
+		MyClass()//constructor will have the same name as the enclosing class
+		{
+		//This is the logic that'll be executed when a no-args constructor is 
+		//being called. 
+		System.out.println("Welcome to no-args constructor");
+		this.example = "No-args string";	
+		}
+	}
+	
+	Parameterized constructors		
+		Constructor that passes in arguments
+
+	class MyClass{
+		String example;
+
+		MyClass(String example, int randomVariable){
+			this.example = example;
+			System.out.println("Welcome to parametrized constructor);
+			System.out.println("Here's the  random variable" + randomVariable);
+		}
+	}
+
+	
+	

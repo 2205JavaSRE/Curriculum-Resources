@@ -1,0 +1,54 @@
+Control Flow Statements:
+
+	Control flow statements will affect the flow of how your code will be executed. 
+	They allow you to repeat blocks of code or ignore it, depending on what logic you've 
+	implemented.
+
+	For loop:
+		for(int i = S; i<N; i = i + k){
+		//(start value; end value; increment steps)
+		//This block of code will loop (N-S)/k times.
+		//Typical use case is to iterate through an array structure
+			}
+
+	While loop 
+		int i = S;
+		while([conditional statement]){
+		// This block of code will execute for as long as the condition is met
+		//Will loop indefinitely if there is nothing to alter the conditional statement 
+		//If condition is not met, then code will not execute at all
+		}
+
+	Do While loop 
+		do{
+		//This block of code will execute at least once, even if condition is not met
+		}while(){
+		//same as a while loop
+		}
+
+	NOTE: the inclusion of code "break;" will stop the execution of code up until then 
+		and exits the loop.
+
+	If, else if and else:
+		if([conditional statement]){
+		//execute if [conditional statement] is true
+		}else if([2nd conditional statement]){
+		//execute if [2nd conditional statement] is true and none of the other else if conditions have been met
+		}else if([3rd conditional statement]){
+		//can have multiple else if statements
+		}else {
+		//execute code if none of the prior conditions have been met
+		} 
+
+	Switch cases
+		switch([expression]){
+			case [1st expression];
+				//if [expression] == [1st expression]
+				//all additional cases will execute, once one case is a match, unless you have a break statement.
+				break;
+			case [2nd expression];
+				//block of code executed;
+				break;
+			default:
+				//Will execute if none of the other cases were a match
+

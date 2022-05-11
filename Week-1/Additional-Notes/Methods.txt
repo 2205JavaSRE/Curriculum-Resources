@@ -1,0 +1,44 @@
+Methods:
+
+	Method is a block of code that is executed when called upon. It consists of a 
+	method signature and body. It allows you to reuse blocks of code. 
+
+	Generally speaking, method signature will consist of acces-modifier, return type, 
+	method name and the parametrers within paranthesis. 
+
+	i.e:
+		public int myMethod(int arg1, String arg2){
+			//block of code
+			return 0;
+		}
+
+	You call a method via it's method name and the appropriate arguments:
+		myMethod(2,"argument 2");
+
+	If a method has the static keyword, then you don't need to instantiate the class 
+	to call on the method. 
+
+	Example code:
+		
+		class myClass{
+
+			myMethod1(){
+				System.out.println("Inside no-args method");
+			}
+	
+			myMethod2(int arg1,String arg2){
+				System.out.println("Inside args method");
+			}
+
+			static myStaticMethod(double arg1){
+				System.out.println("Inside static method");
+			}
+
+			public static void main(String[] args){
+				MyClass myClass = new MyClass();
+
+				myClass.myMethod1();
+				myClass.myMethod2(0.0,"Second string");
+				myStaticMethod(1.1);
+
+			}	
