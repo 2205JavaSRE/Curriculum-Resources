@@ -5,6 +5,14 @@ import com.revature.storage.HumanArrayImpl;
 
 public class MainDriver {
 	
+	public void fordCheckup(FordF150 f) {
+		
+	}
+	
+	public void carCheckup(Car c) {
+		//Any car objects, even ones yet to be 
+	}
+	
 	/*
 	 * Abstraction:
 	 * 	What does it mean for something to abstract?
@@ -20,13 +28,17 @@ public class MainDriver {
 		
 		HumanArrayImpl hArray = new HumanArrayImpl();
 		hArray.addHuman(new Human("Bob",2));
-		hArray.addHuman(new Human("Bob",2));
-		hArray.addHuman(new Human("Bob",2));
-		hArray.addHuman(new Human("Bob",2));
-		hArray.addHuman(new Human("Bob",2));
+		hArray.addHuman(new Human("Boby",2));
+		hArray.addHuman(new Human("Bobbby",2));
+		hArray.addHuman(new Human("Bobiet",2));
+		hArray.addHuman(new Human("Bobster",2));
 		
 		hArray.printAllTheHumans();
 		
+		System.out.println(hArray.findHumanByName("Bobs"));
+		System.out.println(hArray.findHumanByName("Boby"));
+		System.out.println(hArray.findHumanByName("Bobby"));
+		System.out.println(hArray.findHumanByName("Bobster"));
 		
 		
 		/*
@@ -42,6 +54,35 @@ public class MainDriver {
 		 */
 		
 //		System.out.println(h.toString());
+		
+		
+		
+		//-----------------------------------Vehicle Example-----------------------------------
+		
+		Object o = new FordF150(); //This isn't really good!
+		//I don't access to any of the FordF150 or Car methods! 
+		
+		
+		FordF150 ford = new FordF150(); 
+//		ford = new Jaguar();
+		//Gives us access to all the methods!
+		ford.accelerate();
+		ford.brake();
+		ford.offroadDriving();
+		
+		Car myCar = new FordF150();
+//		myCar = new Jaguar();
+		//Only gives us accesss to Car methods!
+		myCar.accelerate();
+		myCar.brake();
+//		myCar.offRoadDriving();
+		
+		
+		Truck t = new FordF150();
+		//Only access to Truck methods
+		t.accelerate();
+		t.carryStuff();
+//		t.brake();
 	}
 
 }

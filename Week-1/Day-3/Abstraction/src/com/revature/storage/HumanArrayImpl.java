@@ -57,8 +57,22 @@ public class HumanArrayImpl implements HumanArray{
 
 	@Override
 	public Human findHumanByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Human returningHuman = null;
+
+		//Loop through the entire array 
+		for(Human h: this.humanArray) {
+			
+			//check if a human exists at this point and if that human has matching names!
+			if(h!= null && h.getName().equals(name)) {
+				returningHuman = h;
+				break; //once we found the human, no point in iterating through the rest!
+			}
+			
+			
+		}
+		
+		return returningHuman;
 	}
 
 	@Override
