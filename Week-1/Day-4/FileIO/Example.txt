@@ -1,0 +1,2 @@
+Hi There 
+Buffered streams allow us to write a lot at a timeBuffered streams allow us to write a lot at a timeBuffered streams allow us to write a lot at a timeBuffered streams allow us to write a lot at a time
