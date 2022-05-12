@@ -13,6 +13,13 @@ public class InheritanceDriver {
 	 * 
 	 * For homogenous inheritance, we use the keyword: "extends"
 	 * class -> class
+	 * interface -> interface
+	 * abstract class -> class
+	 * abstract class -> abstract class
+	 * class -> abstract class 
+	 * 
+	 * Hetrogenous inheritance, we use the keyword: "implements"
+	 * interface -> class
 	 * 
 	 * Java does not have support for multiple class inheritance. So
 	 * 	A class will not have multiple parents. But there is multilevel inheritance 

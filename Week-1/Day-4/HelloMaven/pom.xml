@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.revature</groupId>
+  <artifactId>HelloMaven</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <!-- 
+  		Pom.xml:
+  			POM stand Project Object Model. Maven will look at this file to 
+  			get an idea of how to configure our project. 
+  			
+  		.xml:
+  			Stands for eXtensible Markup Language. A tag based language that is
+  			designed to store configuratino details. 
+  			It is very hierachal, almost every tag should be enclosed in another tag. 
+  			
+  			Each tag will usually have a closing tag
+  			
+   -->
+   
+   
+   <!-- Once we've added the configuration details, we ask Maven to rebuild our
+   	projects based on the new details. -->
+   <properties>
+   	<maven.compiler.source>1.8</maven.compiler.source>
+   	<maven.compiler.target>1.8</maven.compiler.target>
+   </properties>
+   
+  <dependencies>
+  	
+  </dependencies>
+   
+</project>
+
