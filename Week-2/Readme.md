@@ -1,0 +1,124 @@
+# Week 2 Topics
+
+- [Linux](https://www.tutorialspoint.com/unix/index.htm)
+  - File system
+  - Distributions:
+    - Ubuntu, OpenSUSE, RedHat
+    - Amazonlinux
+  - GNU Core Utilities:
+    - cat, cd, cp, ls, mkdir, rm, mv, touch, chmod, pwd, nohup
+  - Other tools:
+    - grep, man, yum, less, crontab
+  - Bash
+    - terminal emulator vs shell
+    - scripting
+    - ssh
+	
+- [Amazon Web Services (AWS)](https://docs.aws.amazon.com/)
+  - [On Premises vs Hybrid vs Cloud](https://servicemuse.com/cloud-vs-on-premises-vs-hybrid/)
+  - [IaaS vs PaaS vs SaaS](https://medium.com/datadriveninvestor/saas-vs-iaas-vs-paas-cloud-computing-models-explained-with-its-benefits-276298aea66d)
+  - Region vs. Availability Zone
+  - Identity and Access Management (IAM)
+  - Virtual Private Cloud (VPC)
+  - Elastic Cloud Compute (EC2)
+    - Security Groups
+    - Autoscaling Groups
+    - Load balancers
+    - Amazon Machine Image (AMI)
+    - Elastic Block Store (EBS)
+  - Simple Storage Service (S3)
+  - Relational Database Service (RDS)
+
+- Tools
+  - [PostgreSQL](https://www.postgresql.org/)
+  - Database administration
+    - CLI, Client tool, IDE plugin
+  - [AWS RDS](https://aws.amazon.com/rds/)
+
+- [SQL: Structured Query Language](https://www.postgresqltutorial.com/)
+  - [Dialects, Vendors, Sublanguages](https://www.tutorialspoint.com/sql/sql-overview.htm)
+  - Keys
+    - Candidate
+    - Primary
+    - Composite
+    - Foreign
+  - DCL: Data Control Language
+    - Grant, Revoke
+  - DDL: Data Definition Language
+    - Create, Alter, Drop, Truncate
+  - DML: Data Manipulation Language
+    - Select, Insert, Update, Delete
+    - DQL: Data Query Language
+  - TCL: Transaction Control Language
+    - Commit, Rollback, Savepoint
+  - Select clauses
+    - Where
+    - Alias, And, Or
+    - Subqueries
+    - Joins
+      - Inner
+      - Outer
+        - Left
+        - Right
+        - Full
+        - Exclusive
+      - Self
+      - Cross
+      - Natural
+      - Equa vs. Theta
+    - Set Operations
+      - Union (ALL)
+      - Intersect (ALL)
+      - Except (ALL)
+    - Group By, Having, Order By
+
+- [RDBMS: Relational Database Management System](https://www.javatpoint.com/what-is-rdbms)
+
+  - [Domain integrity](https://www.itprotoday.com/sql-server/sql-design-four-integrities)
+  - Referential integrity
+  - [ERD: Entity Relational Diagram](https://www.lucidchart.com/pages/er-diagrams)
+  - [Multiplicity](https://docs.oracle.com/cd/E19879-01/819-3669/bnbqh/index.html)
+    - 1 to 1
+    - 1 to many
+    - many to 1
+    - many to many
+    - join (junction) tables
+  - [Normalization](https://www.essentialsql.com/get-ready-to-learn-sql-database-normalization-explained-in-simple-english)
+    - 1NF: Atomicity (No repeating attributes, Atomic values)
+    - 2NF: Partial key dependencies
+    - 3NF: Tansient(Non-key) dependencies
+  - [ACID transactions](https://www.ibm.com/support/knowledgecenter/SSGMCP_5.4.0/product-overview/acid.html)
+    - Atomic
+    - Consistent
+    - Isolated
+    - Durable
+  - [Transaction phenomenon](https://www.postgresql.org/docs/9.5/transaction-iso.html)
+    - Dirty reads
+    - Nonrepeatable reads
+    - Phantoms
+  - [Transaction isolation levels](https://blogs.oracle.com/oraclemagazine/on-transaction-isolation-levels)
+    - Read uncommitted
+    - Read committed
+    - Repeatable Read
+    - Serialization
+    - [Snapshot Serialization](https://drkp.net/papers/ssi-vldb12.pdf)
+    - [MVCC](https://medium.com/@yehohanan7/mvcc-9d6f67e6d3de)
+
+- [JDBC: Java Database Connectivity](https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html)
+  - Set-up/Creating a Connection
+  - DriverClass, Connection
+  - Statement, PreparedStatement, Callable Statement
+  - ResultSet
+  - Design Pattern: Data Access Object
+  - Datasource: Properties, Environment Variables, JDBC URL
+
+- [PL/pgSQL](https://www.postgresql.org/docs/9.6/plpgsql.html)
+  - Function
+    - Scalar
+    - Aggregate
+  - Stored Procedure
+  - Cursors
+  - Index
+  - View
+  - Sequence
+  - Trigger
