@@ -1,0 +1,53 @@
+What is a cloud platform?
+	An online service that people can store data.
+	Place where you can not have to manage your own server. Infrastructure that is a service. 
+	We have Google, Oracle and Amazon for us. 
+	Any sort of remote computing service. Hardware as a service, Software as service, 
+	Storage as a service. 
+
+	An online service that allows you to access infrastructure, products, software over 
+	the internet. 
+
+
+What are the benefits?
+	You don't need to own any of the hardware. None of the maintenance either, just pay 
+	the company a flat rate. It's more decenetralized, more resilient to hardware failure. 
+	
+	It's easily scalable. Because we're not investing in the hardware, we can easily "rent"
+	the hardware with a click of a button. Takes a LOT of time.
+	Accessible anywhere (with internet).
+
+
+IaaS: Infrastrcture as a service
+	We get access to infrastructure that is managed by a cloud platform. 
+	In AWS, we get something called an EC2 instance (Elastic Computing 2) 
+	
+PaaS: Product as a service
+
+SaaS: Software as a service
+
+
+AMI:
+	Amazon Machine Image, this is a template containing the OS and important libraries. 
+
+Key-Pair: 
+	Key pair allows us to authenticate ourselves when we ssh/connect to our remote services. 
+
+Security Group:
+	We don't necessarily want anyone to be able to connect to our resource. 
+	We define inbound and outbound rules:
+		inbound rules specify which ports are available to which IP addresses
+		outbound rules, which remote services are machine has access to. 
+
+EBS: 
+	Elastic Block Storage, persitant data is stored here. Think of this has the "hardrive"
+	to our EC2 instance. 
+
+Free tier for AWS:
+	We can have one computer running for the whole month for free
+	OR we can have 2 computer running for half the month 
+	OR we can have 4 computers running for a quarter of the month. 
+	After each month, your free trial refreshes. 
+
+
+	

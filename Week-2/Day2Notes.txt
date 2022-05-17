@@ -1,0 +1,92 @@
+Shell:
+	 Basiclly the command line. 
+	The terminal interface for an operating system.
+	Allows the user to interact and execute programs in the
+	computer. 
+	
+	sh	- shell
+		older more basic command line interpreter
+	bash	- bourne again shell	
+		newer command line interpreter with more features. 
+
+
+Kernel: 
+	The core instance of an OS
+	Actually communicates between the apps and the hardware. 
+	Kernel is the very core of an operating system, it is
+		what bridges the OS and the hardware. 
+	It is a very low level program that interfaces with CPU, 
+		RAM, HDD, etc. 
+
+
+
+How to make your script into an executable!
+	1) We use the shebang: #!/bin/bash
+	2) Informing the computer that the script is an executable
+		2)a) We provide an area for the computer to look for!
+		2)b) Either we store it an existing area it looks for
+		3)c) or we tell it to look somewhere else as well!
+	3) We need to give everyone permission to interact with the file. 
+		3 types of permission: 
+			r: permission to read
+			w: permmsiion to write 
+			x: permission to execute
+	To give permission we use chmod:
+		chmod +x <script>.sh
+	+x means that we are giving executable permission
+
+
+Challenge before lunch: 
+	1) Create an EC2 instance and connect to it. 
+	2) Update your package manger and install Git. 
+	3) Clone the repo from: https://gitlab.com/slackermedia/bashcrawl.git
+
+	(prerequsite commands: ls, cat, cd)
+	4) Get as far as you can in the dungeon before lunch!
+
+
+Files vs Database:
+	Why don't we store/persist data into files?
+		files are designed to store unrelated, arbitry data. 
+		It's difficult to search for data quickly, not 
+			really good for concurrent operations either. 
+		OR for file/data reliability.
+
+Database: 
+	Designed to store structured related data. 
+	It is easier to manipulate and search for data. 
+	A lot of other useful aspects, such as concurrent operations. 
+	There are many types of databases, we will be focusing in
+	particular on RDBS.
+
+RDBS:
+	Relational Database System
+	The data is structured and can be related to each other. 
+	There are many applications that support RDS, e.g.
+		Oracle, MySql, PostgreSql, etc . 
+
+All of these applications are based on SQL (Structured Query Language).
+
+How to set up Postgresql on AWS EC2 or on AWS RDS. 
+
+Why Postgresql? Because it is free for us. 
+
+
+
+IaaS vs PaaS vs SaaS
+	IaaS: Infrastructure as a service:
+		While the hardware is managed by the Cloud platform, 
+		we configure basically everything else. 
+		The benefit of this is that it is the most configurable.
+		(and typically the cheapest).
+		EC2 is an example of a IaaS
+
+	PaaS: Product as a service:
+		This is a more managed resource. Example of this is the
+		RDS (Relational Database System) that manages the DB and
+		the hardware for us.
+
+	SaaS: Software as a service:
+		This is the "most" managed resource. Examples of these
+		can be Pega or Salesforce or DropBox or Wix or SquareSpace.
+	 

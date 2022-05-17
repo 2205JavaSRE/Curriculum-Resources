@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 //Example of a POJO
+// POJO - Plain Old Java Object
 //Which is a class that is purely designed to store information 
 // There is no "functinoality" expected!
 
