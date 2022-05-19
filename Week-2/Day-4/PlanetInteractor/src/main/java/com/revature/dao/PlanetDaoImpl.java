@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,6 +16,45 @@ public class PlanetDaoImpl implements PlanetDao {
 	@Override
 	public void insertPlanet(Planet p) {
 
+		//Statement vs PreparedStatement 
+		//	Prepared statements avoid sql injection. 
+		// SQL injection is when malicious executions are passed along as a variable but interpreted as a command. 
+		// INSERT INTO planets VALUES (DROP table planets;);
+		
+		//Prepared Statements avoid this by forcing every string to be interpreted correctly. 
+		
+//		String sql = "INSERT INTO planets (planet_name,has_rings) "
+//				+ "VALUES ('"+p.getName()+"',"+p.isRings()+");";
+//		Connection connection = ConnectionFactory.getConnection();
+//		
+//		try {
+//			Statement s = connection.createStatement();
+//			s.execute(sql);
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		//Prepared Stataement version 
+		//try with resources 
+		String sql = "INSERT INTO planets (planet_name,has_rings) VALUES (?,?)";
+		
+		Connection connection = ConnectionFactory.getConnection();
+		
+		//try with resources, can be used with anything that implements AutoClosable, e.g. a connection. 
+		try(PreparedStatement ps = connection.prepareStatement(sql)){ //connection will be closed after we are done!
+			
+			ps.setString(1, p.getName());
+			ps.setBoolean(2, p.isRings());
+			
+			ps.execute(); //We use execute when we DONT expect anything back 
+			//ps.executeQuery(); //WE use use we DO expect something back!
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	@Override
@@ -50,8 +90,8 @@ public class PlanetDaoImpl implements PlanetDao {
 		List<Planet> planetList = new ArrayList<>(); // a better version of array. 
 		
 		try {
-			Statement s = connection.createStatement();
-			ResultSet rs = s.executeQuery(sql);
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
 				//create a planet object from the rows and then add them to the list!
