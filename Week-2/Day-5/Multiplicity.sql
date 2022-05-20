@@ -49,11 +49,6 @@ insert into moons (moon_name, my_planet_id) values
 
 -- Deleting all the moons associated with Earth before deleting Earth itself.
 
-
-
-
-
-
 -- One to One 
 -- One to one relationship is not common. 
 -- We use the many to one relationship, but add in a unique constraint!
