@@ -1,23 +1,21 @@
 package com.revature.models;
 
-
-import java.util.List;
 import java.util.Objects;
 
-public class Planet{
+public class Moon {
 	
 	private int id;
 	private String name;
-	private List<Moon> myMoons;
-	public Planet() {
+	private Planet myPlanet;
+	public Moon() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Planet(int id, String name, List<Moon> myMoons) {
+	public Moon(int id, String name, Planet myPlanet) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.myMoons = myMoons;
+		this.myPlanet = myPlanet;
 	}
 	public int getId() {
 		return id;
@@ -31,19 +29,19 @@ public class Planet{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Moon> getMyMoons() {
-		return myMoons;
+	public Planet getMyPlanet() {
+		return myPlanet;
 	}
-	public void setMyMoons(List<Moon> myMoons) {
-		this.myMoons = myMoons;
+	public void setMyPlanet(Planet myPlanet) {
+		this.myPlanet = myPlanet;
 	}
 	@Override
 	public String toString() {
-		return "Planet [id=" + id + ", name=" + name + ", myMoons=" + myMoons + "]";
+		return "Moon [id=" + id + ", name=" + name + ", myPlanet=" + myPlanet.getName() + "]";
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, myMoons, name);
+		return Objects.hash(id, myPlanet, name);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -53,13 +51,9 @@ public class Planet{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Planet other = (Planet) obj;
-		return id == other.id && Objects.equals(myMoons, other.myMoons) && Objects.equals(name, other.name);
+		Moon other = (Moon) obj;
+		return id == other.id && Objects.equals(myPlanet, other.myPlanet) && Objects.equals(name, other.name);
 	}
-	
-	
-	
-	
 	
 	
 

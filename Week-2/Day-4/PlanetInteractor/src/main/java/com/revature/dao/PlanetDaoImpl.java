@@ -37,7 +37,7 @@ public class PlanetDaoImpl implements PlanetDao {
 		
 		//Prepared Stataement version 
 		//try with resources 
-		String sql = "INSERT INTO planets (planet_name,has_rings) VALUES (?,?)";
+		String sql = "INSERT INTO planets (planet_name) VALUES (?)";
 		
 		Connection connection = ConnectionFactory.getConnection();
 		
@@ -45,7 +45,7 @@ public class PlanetDaoImpl implements PlanetDao {
 		try(PreparedStatement ps = connection.prepareStatement(sql)){ //connection will be closed after we are done!
 			
 			ps.setString(1, p.getName());
-			ps.setBoolean(2, p.isRings());
+
 			
 			ps.execute(); //We use execute when we DONT expect anything back 
 			//ps.executeQuery(); //WE use use we DO expect something back!
@@ -97,7 +97,7 @@ public class PlanetDaoImpl implements PlanetDao {
 				//create a planet object from the rows and then add them to the list!
 				Planet p = new Planet(rs.getInt("planet_id"),
 						rs.getString("planet_name"),
-						rs.getBoolean("has_rings"));
+						null);
 				
 				planetList.add(p);
 				
