@@ -1,0 +1,51 @@
+Server: 
+	A program that responds to a client, from a remote server or 
+	a different computer. 
+
+	A server provides functionality over a network. In most cases
+	that network is the internet. We want to provide the functionality
+	so that other machines/computers/program can levarage the 
+	functionality. 
+
+	The "other" machines/computers/programs are considered clients. 
+
+	Clients interact with Servers through an API 
+	(Application Programming interface)
+
+
+	HTTP (Hyper Text Transfer Protocol) 
+		HTTP is how we communicate over the internet. 
+		Client-server, request response communication pattern. 
+
+	HTTP Request: 
+		URI : Uniform Resource Identifier 
+		(Tells us where the resource we want is) 
+		
+		Method/Verb: Tells the server what we want to do with the resource.
+			GET: Read
+			POST: Create
+			PUT: Update 
+			DELETE: Delete 
+			PATCH
+			OPTIONS
+			HEAD 
+			TRACE 
+			(By default, browsers will sent a get request. )
+		Header - Meta we provide with our payload 
+		Body - Where we send our payload 
+
+	HTTP Response: 
+		Status line: Status line will contain the status code.
+		(Status codes can be really any number, but you should follow convention)
+		Status code: a 3 digit number indicating how the request went. 
+			1xx: Informational
+			2xx: OK 
+			3xx: Redirection 
+			4xx: Client error 
+				401 - 
+				404 - Not Found 
+				418 -
+			5xx : Server Error 
+				500 - Internal Server Error 
+		Header - Meta data we provide with our payload 
+		Body - Where we send our payload
