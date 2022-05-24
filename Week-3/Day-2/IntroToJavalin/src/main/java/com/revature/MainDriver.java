@@ -1,7 +1,9 @@
 package com.revature;
 
+import com.revature.models.Planet;
+
 import io.javalin.Javalin;
-import io.javalin.http.Handler;
+import io.javalin.http.HttpCode;
 
 public class MainDriver {
 
@@ -69,7 +71,9 @@ public class MainDriver {
 		});
 		
 		
-		//path is simply a text, corresponding to a url to which your server will respond to!
+		//REMEMBER: 
+		// The search bar is not a file explorer. 
+		// The path is simply a text, corresponding to a endpoint to which your server will respond to!
 		
 		app.get("/this/is/a/path", ctx -> {
 			ctx.result("This is a path");
@@ -82,6 +86,80 @@ public class MainDriver {
 		app.get("/thisIsAlsoAPath.exe", ctx -> {
 			ctx.result("This is also another valid path");
 		});
+		
+		app.get("/planet/{id}", ctx -> {
+			
+//			System.out.println(ctx.url()); No need for fancy regex 
+			
+			String id = ctx.pathParam("id");
+			
+			ctx.result("You are targetting the right endpoint, the id is: " + id);
+		});
+		
+		
+		app.get("/planet/name/{name}", ctx -> {
+			
+			String name = ctx.pathParam("name");
+			
+			Planet p = new Planet(name);
+			
+			//You can only send back a single response! 
+			// If you're doing a result(), json(), etc, do that only once. 
+			
+			// Here we are sending back the planet objects as a text representation. 
+			ctx.result(p.toString());
+			
+			// Instead of text, we can return the planet as a JSON 
+			
+			/*
+			 * JSON: 
+			 * 	JavaScript Object Notation. 
+			 * 	With the popularity of JS, JSON has become the 'standard' way of sending 
+			 * 	back and forth information. 
+			 * 
+			 * 	Thanks it being hte standard, there are a lot of libraries that can parese JSON
+			 * 	into Java objects and Java objects into json 
+			 * 
+			 * As the name suggests, it follows Javascript notation for an object
+			 * 	i.e. key value pairs: 
+			 * 
+			 * 	Planet object: 
+			 * 		{
+			 * 			id: 1,
+			 * 			name: "Planet 0",
+			 * 			mass: "1",
+			 * 			moons: [{name: "The Moon"}]
+			 * 		}
+			 */
+			
+			ctx.json(p);
+			ctx.status(201);
+		});
+
+		
+		//A GET request should be for retrieving information NOT creating it!
+		// Theoretically I can do anything with any verb, but we should follow standards and conventions. 
+		
+		// When creating a resource, we use a POST request. 
+		
+		//Let's do this properly
+		// With a GET request, we can't send information in the HTTP request body. 
+		// With a POST request, we can send information in the body. 
+		// Also because we can send credentials safely, by not appending it to the url. 
+		app.post("/planet", ctx -> {
+			
+			System.out.println(ctx.body()); //reading from the HTTP Request body
+			
+			// I want a planet to be sent. 
+			// Jackson (the dependency I have in maven) will parse the json into a java object!
+			Planet p = ctx.bodyAsClass(Planet.class);
+			System.out.println(p.getName());
+			System.out.println(p);
+			
+			ctx.status(HttpCode.CREATED); //201
+			
+		});
+		
 		
 	}
 
