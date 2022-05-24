@@ -1,11 +1,16 @@
 package com.revature;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.revature.models.Planet;
 
 import io.javalin.Javalin;
 import io.javalin.http.HttpCode;
 
 public class MainDriver {
+	
+	static List<Planet> planetList = new ArrayList<>();
 
 	public static void main(String[] args) {
 		
@@ -87,54 +92,54 @@ public class MainDriver {
 			ctx.result("This is also another valid path");
 		});
 		
-		app.get("/planet/{id}", ctx -> {
-			
-//			System.out.println(ctx.url()); No need for fancy regex 
-			
-			String id = ctx.pathParam("id");
-			
-			ctx.result("You are targetting the right endpoint, the id is: " + id);
-		});
+//		app.get("/planet/{id}", ctx -> {
+//			
+////			System.out.println(ctx.url()); No need for fancy regex 
+//			
+//			String id = ctx.pathParam("id");
+//			
+//			ctx.result("You are targetting the right endpoint, the id is: " + id);
+//		});
 		
 		
-		app.get("/planet/name/{name}", ctx -> {
-			
-			String name = ctx.pathParam("name");
-			
-			Planet p = new Planet(name);
-			
-			//You can only send back a single response! 
-			// If you're doing a result(), json(), etc, do that only once. 
-			
-			// Here we are sending back the planet objects as a text representation. 
-			ctx.result(p.toString());
-			
-			// Instead of text, we can return the planet as a JSON 
-			
-			/*
-			 * JSON: 
-			 * 	JavaScript Object Notation. 
-			 * 	With the popularity of JS, JSON has become the 'standard' way of sending 
-			 * 	back and forth information. 
-			 * 
-			 * 	Thanks it being hte standard, there are a lot of libraries that can parese JSON
-			 * 	into Java objects and Java objects into json 
-			 * 
-			 * As the name suggests, it follows Javascript notation for an object
-			 * 	i.e. key value pairs: 
-			 * 
-			 * 	Planet object: 
-			 * 		{
-			 * 			id: 1,
-			 * 			name: "Planet 0",
-			 * 			mass: "1",
-			 * 			moons: [{name: "The Moon"}]
-			 * 		}
-			 */
-			
-			ctx.json(p);
-			ctx.status(201);
-		});
+//		app.get("/planet/name/{name}", ctx -> {
+//			
+//			String name = ctx.pathParam("name");
+//			
+//			Planet p = new Planet(name);
+//			
+//			//You can only send back a single response! 
+//			// If you're doing a result(), json(), etc, do that only once. 
+//			
+//			// Here we are sending back the planet objects as a text representation. 
+//			ctx.result(p.toString());
+//			
+//			// Instead of text, we can return the planet as a JSON 
+//			
+//			/*
+//			 * JSON: 
+//			 * 	JavaScript Object Notation. 
+//			 * 	With the popularity of JS, JSON has become the 'standard' way of sending 
+//			 * 	back and forth information. 
+//			 * 
+//			 * 	Thanks it being hte standard, there are a lot of libraries that can parese JSON
+//			 * 	into Java objects and Java objects into json 
+//			 * 
+//			 * As the name suggests, it follows Javascript notation for an object
+//			 * 	i.e. key value pairs: 
+//			 * 
+//			 * 	Planet object: 
+//			 * 		{
+//			 * 			id: 1,
+//			 * 			name: "Planet 0",
+//			 * 			mass: "1",
+//			 * 			moons: [{name: "The Moon"}]
+//			 * 		}
+//			 */
+//			
+//			ctx.json(p);
+//			ctx.status(201);
+//		});
 
 		
 		//A GET request should be for retrieving information NOT creating it!
@@ -153,12 +158,43 @@ public class MainDriver {
 			// I want a planet to be sent. 
 			// Jackson (the dependency I have in maven) will parse the json into a java object!
 			Planet p = ctx.bodyAsClass(Planet.class);
-			System.out.println(p.getName());
-			System.out.println(p);
+			planetList.add(p);
 			
 			ctx.status(HttpCode.CREATED); //201
 			
 		});
+		
+		app.get("/planets", ctx -> {
+			
+			ctx.json(planetList);
+			
+		});
+		
+		
+		app.get("/planet/{name}", ctx -> {
+			
+			String name = ctx.pathParam("name");
+			Planet outGoingPlanet = null;
+			
+			for(Planet p: planetList) {
+				if(p.getName().equals(name)) {
+					outGoingPlanet = p;
+				}
+			}
+			
+			if(outGoingPlanet == null) {
+				ctx.status(HttpCode.NOT_FOUND);
+			}else {
+				ctx.json(outGoingPlanet);
+			}
+			
+		});
+		
+		//for deleting
+		app.delete(null, null);
+		
+		//for updating existing resources!
+		app.put(null, null);
 		
 		
 	}
