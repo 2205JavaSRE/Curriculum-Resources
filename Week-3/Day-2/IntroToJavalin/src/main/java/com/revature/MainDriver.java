@@ -191,10 +191,10 @@ public class MainDriver {
 		});
 		
 		//for deleting
-		app.delete(null, null);
+//		app.delete(null, null);
 		
 		//for updating existing resources!
-		app.put(null, null);
+//		app.put(null, null);
 		
 		
 	}
