@@ -53,9 +53,13 @@ public class AuthenticateController {
 		if(access) {
 			ctx.result("You have access");
 			ctx.status(HttpStatus.ACCEPTED_202);
+			
+			ctx.sessionAttribute("user", u);
+			ctx.sessionAttribute("role","super user");
 		}else {
 			ctx.result("You don't have access!");
 			ctx.status(HttpCode.FORBIDDEN);
+			ctx.sessionAttribute("role", "hacker");
 		}
 		
 	}
@@ -66,6 +70,16 @@ public class AuthenticateController {
 		
 		System.out.println(ctx.bodyAsClass(User.class));
 		
+	}
+	
+	public static boolean verifyUser(Context ctx) {
+		User u = ctx.sessionAttribute("user");
+		
+		if(u == null) {
+			return false;
+		}else {
+			return true;
+		}
 	}
 
 }

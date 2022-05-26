@@ -4,6 +4,7 @@ import com.revature.models.User;
 
 import io.javalin.Javalin;
 import io.javalin.http.Cookie;
+import io.javalin.http.HttpCode;
 
 public class RequestMapping {
 	
@@ -20,11 +21,22 @@ public class RequestMapping {
 		});
 		
 		app.get("/Planets", ctx -> {
-			PlanetController.getAllPlanets(ctx);
+			if(AuthenticateController.verifyUser(ctx)) {
+				PlanetController.getAllPlanets(ctx);
+			}else {
+				ctx.status(418);
+			}
+			
 		});
 		
 		app.post("/Planet", ctx -> {
-			PlanetController.createPlanet(ctx);
+			
+			if(AuthenticateController.verifyUser(ctx)) {
+				PlanetController.createPlanet(ctx);
+			}else {
+				ctx.status(HttpCode.FORBIDDEN);
+			}
+			
 		});
 		
 		
@@ -120,7 +132,38 @@ public class RequestMapping {
 		app.get("/cookie/logout", ctx -> {
 			ctx.clearCookieStore();
 		});
+		
+		
+		
+		//Sessions
+		// Sessions are similar to cookies in the fact that they are used to keep track of the client. 
+		// Cookies will store their informatoin in the client side 
+		// Sessions will store the information on both the client and the server side. 
+		
+		// (Javalin as a framework has helped to cover some of the problems with cookies, like encrypting the 
+		// cookies the client side)
+		
 			
+		app.post("/get/session", ctx -> {
+		
+			//some validation would be involved here first 
+			User u = ctx.bodyAsClass(User.class);
+			
+			ctx.sessionAttribute("user",u);
+			
+			
+		});
+		
+		app.get("/session/secret", ctx -> {
+			
+			User u = ctx.sessionAttribute("user");
+			
+			System.out.println(u.getUsername());
+		});
+	
+		app.get("/session/invalidate", ctx-> {
+			ctx.consumeSessionAttribute("user");
+		});
 		
 	}
 
