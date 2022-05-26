@@ -10,6 +10,13 @@ import io.javalin.http.HttpCode;
 
 public class AuthenticateController {
 	
+	/*
+	 * 
+	 * Cookie? 
+	 * 	A text file that has certain information about our system!
+	 * 	There are 1st party and 3rd party cookies out there. 
+	 */
+	
 	
 
 	public static void authenticateByPathParam(Context ctx) {
