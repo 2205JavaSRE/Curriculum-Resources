@@ -9,6 +9,7 @@ public class RequestMapper {
 	
 	public void configureRoutes(Javalin app) {
 
+		app.get("/greetings", ctx -> {ctx.result("Hello there!");});
 
 		app.get("/api/planets", ctx -> {
 			planetController.getAllPlanets(ctx);
