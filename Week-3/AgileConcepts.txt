@@ -1,0 +1,34 @@
+Waht is Agile?
+	Iterative Approach, where we focus on smaller timelines (sprints) to build 
+	smaller features at a time. Benefit of this approach is that we get feedback 
+	sooner on any issues or problems that arise. 
+
+	There are frameworks built on top of it, e.g. Scrum or Kanban that emphasis 
+	differents aspects.
+
+
+Scrum?
+	Focus is to work together in teams. 
+
+	Sprints: 
+		A short, specific interval of time where work is expected to be done in. 
+		Sprints can be as short as a week, or up to a month. 
+
+	Sprint planning; 
+		Planning the workload and expectations for a sprint!
+
+	Sprint reviews: 
+		Review how the last sprint went. 
+
+	(Daily) Standups: 
+		To talk about the progress so far, the plan for the day and any blockers
+		if there are any. 
+
+	Scrum Master: 
+		They manage the scrum system, ensure everyone knows what they're expecting 
+		to do. 
+		(For P1, to write up morning standup notes for the team) 
+		(Every week, the scrum master will get the option to pass along their title)
+
+Kanban board: 
+	
