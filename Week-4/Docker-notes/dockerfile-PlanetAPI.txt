@@ -10,7 +10,7 @@ FROM openjdk:8-jdk
 ADD Planet-API.jar Planet-API.jar
 
 #Setting up environment variables
-ENV db_url=jdbc:postgresql://database-1.cm90uslbuknf.us-east-1.rds.amazonaws.com:5432/postgres
+ENV db_url=jdbc:postgresql://{host}:5432/postgres
 ENV db_username=postgres
 ENV db_password=p4ssw0rd
 
