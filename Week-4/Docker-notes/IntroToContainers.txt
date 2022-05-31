@@ -1,0 +1,48 @@
+Virtual Machines 
+	Benefits of Virtual machines are that:
+	> Cost savings and increased efficiency 
+	> Easy provisioning 
+	> Isolation and DevOps.
+
+	Hardware is virtualized. 
+
+Containers: 
+	Operating System level virtualization. 
+	A container is a standard unit of software that packages up code and all of its 
+		dependencies into an isolated environment. 
+	Containers and VMs are similar, VMs virtualize at hardware level and containers 
+		virtualize at the OS level. 
+
+	What this means is that the container will piggy back of the host machines OS. 
+	What are the benefits of not needing its own OS?
+	
+	> Lightweight - requireres even less resources than VM
+	> Speed and Scalability - Containers take seconds to deploy, compared to VMs that take minutes. 
+	> Isolation and DevOps - create lightweight and isolated environments. 
+
+What is a popular container management tool?
+	Docker 
+
+What does docker do?
+	When you install docker onto your systems it provides tools for managing our containers. 
+	We can configure, create and start containers in our system. 
+	This thanks to the docker daemon thread (a constantly background process)
+
+	Dockerfile -> Docker Image -> Docker container 
+
+	Dockerfile:
+		Lets us create and configure our own custom imagees, where we can specify, 
+		the images our images is going to be built off, set up env variables and set
+		up commands for the container to execute.
+
+		Commands associated with a Dockerfile 
+		How to build a docker image in the terminal from a Dockerfile
+
+	Docker Image:
+		Containers are based of images. An images is simply a recipe, a set of instructions
+		for the Docker engine to tell it how to execute the container. 
+		Images can be built of other images, so we can use prebuilt images from DockerHub
+
+	Docker Container 
+		Container managed by container. Isolated environment with all the dependencies 
+		and libraries needed.  
