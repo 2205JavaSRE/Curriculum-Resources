@@ -1,0 +1,19 @@
+#If we want to build an image from scratch, we can use 'scratch'
+
+#But I'm planning a Java application, so I'll use a JDK image
+FROM openjdk:8-jdk
+
+#Copying over the jar file into the container
+ADD Planet-API.jar Planet-API.jar
+
+#Setting up environment variables
+ENV db_url=jdbc:postgresql://{host}:5432/postgres
+ENV db_username=postgres
+ENV db_password=p4ssw0rd
+
+#Final command in the dockerfile
+CMD ["java","-jar","Planet-API.jar"]
+
+#After we have written out the Dockerfile
+#We execute the command "docker build . " in the terminal, and this will build an image!
+# We can provide flags, such as -t , to name the image

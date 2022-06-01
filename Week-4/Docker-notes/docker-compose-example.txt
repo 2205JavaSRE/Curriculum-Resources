@@ -1,0 +1,38 @@
+#YAML: YAML Ain't Markup Language
+#YAML used indentation to help format its configuration
+# EXAMPLE syntax:
+# db:
+#   username:
+#   password:
+#   url: something
+#
+#   Docker compose use YAML as their configuration format
+
+
+services: #Declares the services we are going to have
+  planet-api: #Labelling my first service as "planet-api"
+    image: 'lightweight-planet-api'
+    container_name: lightweight_planet
+    ports:
+      - 7500:7500
+      - 7501:6000
+    environment:
+      - db_url=jdbc:postgresql://database-1.cm90uslbuknf.us-east-1.rds.amazonaws.com:5432/postgres
+      - db_username=postgres
+	  - db_password=p4ssw0rd
+  planet-api-2:
+    image: 'lightweight-planet-api'
+    ports:
+      - 8000:7500
+    environment:
+      - db_url=jdbc:postgresql://db:5432/postgres
+      - db_username=postgres
+      - db_password=password
+    depends_on:
+      - db
+  db:
+    image: 'postgres'
+    container_name: postgres_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
