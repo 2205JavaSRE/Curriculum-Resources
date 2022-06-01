@@ -1,19 +1,19 @@
-#If we want to build an image from scratch, we can use 'scratch'
+#Building stage, to build the jar file
+#I require a Maven image to be able to build a maven project!
 
-#But I'm planning a Java application, so I'll use a JDK image
-FROM openjdk:8-jdk
+FROM maven:3.8.5-openjdk-8 AS MAVEN_BUILD_STAGE
 
-#Copying over the jar file into the container
-ADD Planet-API.jar Planet-API.jar
+#Copy over all the files inside of our directory!
+COPY ./ ./
 
-#Setting up environment variables
-ENV db_url=jdbc:postgresql://{host}:5432/postgres
-ENV db_username=postgres
-ENV db_password=p4ssw0rd
+RUN mvn clean package
 
-#Final command in the dockerfile
-CMD ["java","-jar","Planet-API.jar"]
 
-#After we have written out the Dockerfile
-#We execute the command "docker build . " in the terminal, and this will build an image!
-# We can provide flags, such as -t , to name the image
+#Distributable lightweight image for running the jar file
+FROM openjdk:8-jre
+
+COPY --from=MAVEN_BUILD_STAGE /target/PlanetInteractorAPI-0.0.1-SNAPSHOT-shaded.jar /random/folder/demo.jar
+
+
+CMD ["java","-jar","/random/folder/demo.jar"]
+
