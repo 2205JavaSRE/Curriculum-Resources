@@ -56,6 +56,12 @@ public class MainDriver {
 				.tag("purpose", "demo")
 				.register(registry);
 		
+		Counter counter2 = Counter
+				.builder("number_of_http_requests_to_planet")
+				.description("To keep track of the number of planet requests")
+				.tag("purpose", "planets")
+				.register(registry);
+		
 		
 //		We need to configure our Javalin application. 
 		Javalin app = Javalin.create(
@@ -75,12 +81,11 @@ public class MainDriver {
 		
 		app.get("/drink", ctx -> {
 			System.out.println("I want to keep track of how many times I've asked for a drink!");
-			counter.increment(-1);
+			counter.increment(1);
 		});
 		
-		app.get("/not/drink", ctx -> {
-			System.out.println("I want to keep track of how many times I've asked for a drink!");
-			counter.increment(-1);
+		app.get("/planet", ctx -> {
+			counter2.increment(1);
 		});
 		
 	}
