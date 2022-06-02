@@ -1,0 +1,18 @@
+services:
+  app:
+    image: 'barayathel/micrometer-example:demo'
+    container_name: micrometer-container
+    ports:
+      - 7400:7400
+  prom:
+    image: 'prom/prometheus'
+    container_name: prom-container
+      #Specify the prometheus file in our host system and move it into the container!
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+  graf:
+    image: 'grafana/grafana'
+    ports:
+      - 8000:3000
