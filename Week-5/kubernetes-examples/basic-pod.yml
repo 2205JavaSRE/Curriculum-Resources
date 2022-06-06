@@ -1,0 +1,18 @@
+apiVersion: v1 #This is like a library, we state which version of the api we want to get which objects. v1 is the first stable version of the api, gives us some core objects, like pod 
+
+kind: Pod #Describe the kind of kubernetes object that I will be creating! 
+
+metadata: 
+  name: hello-pod
+  labels: 
+    app: hello-demo 
+
+spec: #Describing the object itself and what it will do, in this case the Pod 
+  restartPolicy: Never 
+  containers: 
+    - name: hello-demo
+      image: hello-world
+      resources:  
+        limits: # Sets an upper bound on how much resource this container will use 
+          memory: "128Mi"
+          cpu: "500m"

@@ -1,0 +1,59 @@
+kubectl commands
+
+	- kubectl version
+	- kubectl apply -f [somefile].yml
+		- f indicates declarative
+	- kubectl get [objects]
+		- -o wide
+		- --watch
+	- kubectl describe [objects]
+	- kubectl delete [object] [name]
+	- kubectl logs []
+
+
+apiVersions
+	- if just v[x]
+		- feature is considered generally available (GA) and stable
+			- production ready
+	- alpha refers to new features
+		- can be the wild west
+		- usually for testing and prototyping
+			- v1alpha1
+				- the first alpha release for version 1 of that feature
+	- beta
+		- new features are starting to take shape
+		- closer to version release
+	- in Kubernetes, objects are separated in different groups
+		- ie: batch, core, apps
+		- core is from the older version of Kubernetes
+			- don't need to include core group in apiVersion
+
+Node: 
+  Simply a computer. It can be either a "bare-metal" computer or it is a virtual machine. A node is part of a cluster. 
+
+Cluster: 
+  A bunch of nodes. A group of computers that are working in a network. 
+
+Network:
+  Allows applications or services running on the seperate nodes to communicate with each other. 
+
+Port: 
+  Services will listen to a port for incoming traffic. 
+
+Kubernetes API: 
+  configuration details in a cluster is very complex. For a developer to manually configure things is very very difficult. Instead Kubernetes provides us the API server to allocate and create resources. These resources are "objects" in the K8 API. 
+
+Kubectl: (Kubernetes Control)
+  Is how we interface with the API, via the CLI. 
+
+Kubelet: 
+  Primary "Node Agent" it manages it's own node in the cluster
+
+Pod: 
+  The smallest "unit" within a Kubernetes cluster. It can run a single or multiple containers. 
+
+Kubernetes Scheduler: 
+  When new pods are created, the scheduler will assign the appropriate node for the pod. 
+
+etcd: 
+  key-value store used as Kubernetes' backing store for all cluster data. 

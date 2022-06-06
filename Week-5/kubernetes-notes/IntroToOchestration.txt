@@ -1,0 +1,22 @@
+What is Ochestration tool?
+	Container ochestration tool helps us to manage our distributed application. It has features that 
+	make managing containers much easier. 
+
+Features: 
+	Reconciling the desired state: 
+		The ochestrator's goal is to keep a "state". That state can be to deploy 7 instances of an example
+		container app. If a container goes down, the ochestrator will try to redeploy it. 
+	
+		We can take it a step further by asking it to handle other metrics like traffic load of each container
+		to be set to 60%. IF containers are getting hit hard, the ochestrator will deploy more. 
+	Replicated and Global Services: 
+		Replicate services or provide a global service for other services. 
+	Service Discovery: 
+		Provides a way to keep track of our services and let other services "discover" them. 
+	Routing 
+	Load Balancer 
+	Scaling 
+	Self-healing
+	Zero downtime deployments 
+	Security
+	Location awareness
