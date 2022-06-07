@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: micro-deployment 
+  labels: 
+    app: micrometer-app 
+
+spec: # Specifications for the Deployment!
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: micro-demo # has to match the template labels app. 
+  template: 
+    metadata: 
+      labels: 
+        app: micro-demo
+    spec: # specification for the pod itself now!
+      containers: 
+        - name: micrometer-demo-deployment
+          image: barayathel/micrometer-example
+          ports:
+            - containerPort: 7400
+          imagePullPolicy: Always # This is an optional spec, whenever we redploy it will always pull image from the remote repo

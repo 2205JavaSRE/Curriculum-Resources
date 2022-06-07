@@ -1,0 +1,12 @@
+apiVersion: v1 #Core group, has a lot of the objects we need 
+kind: Pod 
+metadata: 
+  name: micrometer-pod
+  labels:
+    app: micrometer-demo 
+spec: 
+  containers:
+    - name: micrometer-example
+      image: barayathel/micrometer-example #by deafult it will grab :latest tag 
+      ports: 
+        - containerPort: 7400 
