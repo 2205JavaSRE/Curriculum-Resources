@@ -1,0 +1,65 @@
+Incident Management : (incidents are disruptions to our systems)
+	Process of handling an incident once an alert has been triggerd by our monitoring systems.
+	SRE on call is in charge of starting a process if needed: 
+	(Not every alert has to trigger it) 
+	> Some alerts have playbooks highlighted, on how to handle it. (good candidates for automation)
+	> At the SRE's discretion:
+		Is less serious: don't start right away, unless no progress is being made in x amount
+			of time. 
+		Is serious (bleeding out money) : start the process straight away. 
+	> On call in a rotation usually 1 out of 6-8 weeks. ("Have the pager")
+	> When Incidents do occur, requires a time response 
+		"business critical" within 5 minutes 
+		"urgent" within 30 minutes 
+	> Once the process has been initiated other teams might be requried to participate 
+		> e.g. Development team, DevOps team, Testing team, Business team 
+	> To omptimize the resolution of the incident, a clear process and chain of command is recommended.
+		> 3 roles: 
+			> Incident Commander (IC):
+				- owns incident: responsible for making desicions regarding the resolution.
+				- Might be the SRE on call, it might be another SRE so that SRE on call can 
+					continoue to conduct the investigation (as the Ops Lead)
+			> Ops Leader (OL):
+				- own the investigation 
+				- can add more investigators as needed 
+				- communication channel:
+					i.e. Slack 
+					> updates can be posted
+					> metrics/monitoring data 
+			> Communication Lead (CL): 
+				- keep people informed 
+					> keep stakeholdes updated while investigators can focus on the problem.
+				- start an incident document:
+					> shared with the team to be kept up to date
+					> maintain the incident codument as updates are given 
+					> once the incident is over, the incident document beccomes the foundation for postmortem.
+
+	> roles can be easily transhered when shifts end, thanks to the incdient document    
+
+Post-mortem 
+	> Document based on the incident document that describes what happened and how it was resolved 
+		- root cause of the incident 
+		- how to address the undelying issues 
+	> Drafted by the SRE tream involved in the incident 
+		- reviewed and published for everyone to read 	
+	> Part of continous improvement culture 
+		- learning opportunity to prevent similar incidents in the future
+		- blame free (constructive criticism) 
+	> General template: 
+		- date/people involved 
+		- executive summary (1 sentence of what happened and the impact)
+		- problem summary:
+			- technical issue
+			- root cause 	
+		- action items:
+			- link them to a backlog/product backlog to be iterated on 
+		- lesson learned: 
+			- what went well 
+			- what could be improved on 
+		- timeline 
+			- highlights the steps taken to recovery
+	> getting feedback from other sRE practices: 
+		- does the system have good monitory?
+			- do we need more/ different metrics?
+			- SLI, SLO and SLA 
+		- does something need to be automated?
