@@ -1,0 +1,80 @@
+kubectl: 
+	kubectl is our CLI tool to interact with the kubernetes API. 
+	The kubernetes api is going to create everything we need for us. 
+
+
+	To get information about resources we use
+	kubectl get <resource>
+	kubectl get <resource> --output <options>
+
+	More in depth information using 
+	kubectl describe <type-of-resource> <resource-name>
+
+	Deleting resource 
+	kubectl delete <type-of-resource> <resource-name> 
+
+	Namespaces: 
+	kubectl get namespaces 
+
+	kubectl create namespaces <name-of-your-space>
+
+	Checking which resources are in a name space 
+	kubectl api-resources --namespaced=false
+	kubectl api-resources --namespaced=true
+
+	
+
+Resources in Kubernetes: 
+	Pods: 
+		Pods are the smallest deployable units of computing that you can create and manage in kuberenetes. 
+	
+		A pod can be a group of containers with shared resources. If you have tightly coupled services, 
+		then it might be a good idea to have them in the same pod so that they can easily communicate with each other. 
+	
+		(Having multiple containers in a pod is bad practice generally, we want our containers to be loosely coupled
+		to maximise flexibility in scaling.) 
+
+		To deploy a pod by itself, we want to create a configuration file for Kubernetes API to create our pod. 
+		We can run it using the kubectl cli : $kubectl apply -f <name-of-the-file>.yml 
+						      $kubectl create -f <name-of-the-file>.yml
+
+	Controllers: 
+		Deployment :
+			Describes a "desired state" and is used to deploy multiple pods at a time.
+			Deployment uses ReplicaSet to manage the multiple pods.  
+		
+		ReplicaSet
+			(Bad practice to use ReplicaSet, Deployment provides more abstracaction with a lot more features, e.g.
+			rolling updates). 
+
+
+	Services: 
+		(designed for other users) 
+		Allow other services and resource in and outside of the cluster to communicate with each other. 
+		(BEcause controllers and schedulers in kubernetes are creating and destroying pods in the cluster, we shouldn't
+		use ip associated with just a pod.)
+
+		I need something that will keep track of the right pods, and funnel traffic to the pod itself. 
+
+		ClusterIP:
+			Expose the service on the cluster-internal IP. This is meant for internal communication in the 
+			Cluster iteslf. 
+
+		NodePort:
+			Expose a service on each Node's IP at a static port. You'll be able to contact the NodePort service
+			from outside the cluster, look like: <NodeIP>:<NodePort>
+
+		LoadBalancer (for cloud K8 clusters):
+			A service that will provide access over the cloud to the managed pods. 
+
+declarative vs imperative 
+	imperative tells us how to do something to achieve a state 
+	declaratvice just tells us to achieve a state. 
+
+	In this case, we have a configuraiton file telling kubernetes that it should maintain a state of a single pod on our 
+	cluster. 
+
+	When we use "kubectl apply" we are telling it declarative to maintain the state. 
+	When we use "kubectl create" we are telling it to create a pod to maintian the state. 
+
+		

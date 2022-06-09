@@ -4,6 +4,7 @@ kind: Pod #Describe the kind of kubernetes object that I will be creating!
 
 metadata: 
   name: hello-pod
+  namespace: ben-space
   labels: 
     app: hello-demo 
 
@@ -11,7 +12,8 @@ spec: #Describing the object itself and what it will do, in this case the Pod
   restartPolicy: Never 
   containers: 
     - name: hello-demo
-      image: hello-world
+      image: barayathel/basic-kube-app
+      imagePullPolicy: Always 
       resources:  
         limits: # Sets an upper bound on how much resource this container will use 
           memory: "128Mi"

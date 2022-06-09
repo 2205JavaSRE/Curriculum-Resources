@@ -2,11 +2,12 @@ apiVersion: apps/v1
 kind: Deployment 
 metadata: 
   name: micro-deployment 
+  namespace: ben-space #if you don't specify it switches to default namespace 
   labels: 
     app: micrometer-app 
 
 spec: # Specifications for the Deployment!
-  replicas: 3
+  replicas: 1
   selector: 
     matchLabels: 
       app: micro-demo # has to match the template labels app. 
