@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: postgres-pod 
+  labels: 
+    app: postgres 
+spec:  
+  containers: 
+    - name: postgres-container  
+      image: barayathel/planet-db 
+      ports: 
+        - containerPort: 5432 
+      env: 
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: p4ssw0rd
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+      volumeMounts: 
+        - mountPath: /var/lib/postgresql/data
+          name: db-data
+  volumes: 
+    - name: db-data #I'm attaching the volume in the container, labelled as "db-data" to an external volume 
+      emptyDir: {} #I'm storing it somewhere that will get destroyed, only good for temporary data. 
+                  # If the pod is destroyed, all the data is destroyed. 
+                  # For you guys, you should be storing it in AWS EBS 
+

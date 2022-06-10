@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: planets-deployment
+  #namespace: ben-space 
+  labels: 
+    app: planets-app
+
+spec: 
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: planet-demo 
+  template: 
+    metadata:
+      labels: 
+        app: planet-demo
+    spec:
+      containers:
+        - name: planet-app
+          image: barayathel/planet-api
+          ports: 
+            - containerPort: 7500 
+          imagePullPolicy: Always
+          env: 
+            - name: db_url 
+              value: jdbc:postgresql://postgres-service:5432/postgres
+            - name: db_username
+              value: postgres
+            - name: db_password
+              value: p4ssw0rd 
