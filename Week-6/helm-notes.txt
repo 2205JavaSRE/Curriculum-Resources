@@ -1,0 +1,29 @@
+What is Helm ?
+	Helm is a package manager for Kubernetes. Allows us to define, install and upgrade
+	the most complex Kubernetes applications. 
+	
+	Helm uses charts - a chart is a collection of files that describe a related set
+	of Kubetrnetes resources. For example a single chart might be used to deploy 
+	something simple, like a pod or an entire web app with deployments, services, volumes, etc.
+
+
+Installing Helm: https://helm.sh/docs/intro/install/	
+	
+
+What is a chart? https://helm.sh/docs/topics/charts/
+	An organized collection of files inside of a directory. The directory name is 
+	the name of the chart (without versioning information).
+	
+	e.g. a directory will contain: 
+	Chart.yaml 			# a YAML file containing information about the chart
+	LICENSE 			# OPTIONAL: A plain text file contianing the license for the chart
+	README.md 			# OPTIONAL: A human-readable README file 
+	values.yaml: 		# The default configuration values for htis chart 
+	values.schema.json: # A JSON Schema for imposing a structure on the values.yaml file
+	chars/ 				# A directory containing any charts upon which this chart depends. 
+	crds/ 				# Custom Resource Definitions 
+	templates/ 			# A directory of templates that, when combined with values, will generate valid Kubernetes manifest files 
+	templates/NOTES.txt # OPTIONAL: A plain text file contianing shot usage notes
+	
+	
+Example chart file: https://helm.sh/docs/topics/charts/

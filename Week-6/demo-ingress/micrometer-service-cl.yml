@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: micrometer-service
+  namespace: ben-space
+  labels:
+    app: micrometer-service
+spec:
+  selector:
+    app: micro-demo
+  ports:
+    - port: 80 #IS meant for the service
+      targetPort: 7400 # this is for the container port
+
+      # from externally we go to port 31000 -> gets funneld to our service on port 80 (internal) -> funneled to port 7400 in the pod
+      # communicating from internally, a service or pod will communicate to port 80 -> funneled to port 7400 in the pod.
+

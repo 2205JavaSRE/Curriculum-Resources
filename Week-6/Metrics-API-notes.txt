@@ -1,0 +1,29 @@
+Kubernetes Metrics-API: https://kubernetes-sigs.github.io/metrics-server/
+
+The metrics server is used to collect resource metrics from kubelets and expose them 
+in Kuberenetes API server - through the Metrics API. 
+
+Metrics API can be access via "kubectl top" for node and pod information 
+
+Advantages: 
+> A single deployment that works on most clusters (see Requirements)
+> Fast autoscaling, collecting metrics every 15 seconds.
+> Resource efficiency, using 1 mili core of CPU and 2 MB of memory for each node in a cluster.
+> Scalable support up to 5,000 node clusters.
+
+We can use Helm to to install the mterics server, using the following commands: 
+
+	#To add the repo to helm locally
+	$helm repo add metrics-server https://kubernetes-sigs.github.io/metrics-server/
+	
+	#To deploy it to our kubernetes cluster 
+	$helm upgrade --install metrics-server metrics-server/metrics-server
+
+	(NOTE: We should only have a single instance of this running, and to make sure it's in 
+		the default namespace using "-n default")
+	
+We can also do it manually: 
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+
