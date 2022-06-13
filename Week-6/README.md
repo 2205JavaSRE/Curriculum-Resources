@@ -1,0 +1,18 @@
+# Week 6 Topics
+- [DevOps](https://aws.amazon.com/devops/what-is-devops/)
+  - Continous Integration
+  - Contionus Deployment/Delivery
+  - [CICD Pipeline](https://www.redhat.com/en/topics/devops/what-cicd-pipeline)
+  - [Deployment Strategies](https://docs.openshift.com/dedicated/3/dev_guide/deployments/deployment_strategies.html)
+    - Rolling
+    - Blue/Green
+    - Canary
+- [Terraform](https://www.terraform.io/language/state/remote-state-data)
+  - Remote State
+- [Jenkins](https://www.jenkins.io/doc/book/)
+  - Jenkins Job
+- [Monitoring and Alerting](https://www.digitalocean.com/community/tutorials/an-introduction-to-metrics-monitoring-and-alerting)
+  - Metrics Server
+  - Prometheus Operator
+  - Prometheus Alert Manager
+  - Burn Rate
