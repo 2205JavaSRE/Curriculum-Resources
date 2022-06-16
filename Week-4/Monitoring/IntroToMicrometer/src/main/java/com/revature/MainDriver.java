@@ -88,6 +88,11 @@ public class MainDriver {
 			counter2.increment(1);
 		});
 		
+		
+		app.get("/", ctx -> {
+			ctx.result("Welcome to my Micrometer example! And now Jenkins is automatically building it!");
+		});
+		
 	}
 
 }
