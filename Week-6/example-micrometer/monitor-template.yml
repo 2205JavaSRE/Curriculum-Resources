@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: <name of monitor>
+  namespace: <namespace>
+  labels:
+    app: <app-label>
+    prometheus: devops #This key: value pair has to exist! Otherwise prometheus will not recognize this service monitor
+spec:
+  endpoints:
+  - port: http
+    interval: 15s
+    path: <path> #Where your metrics will be
+  namespaceSelector:
+    matchNames:
+    - <namespace>
+  selector:
+    matchLabels:
+      app: <app-label>
