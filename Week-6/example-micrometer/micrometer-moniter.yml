@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: micrometer-monitor
+  namespace: ben-space
+  labels:
+    app: micrometer-demo
+    prometheus: devops
+spec:
+  endpoints:
+  - port: http
+    interval: 15s
+    path: /metrics
+  namespaceSelector:
+    matchNames:
+    - ben-space
+  selector:
+    matchLabels:
+      app: micrometer-demo

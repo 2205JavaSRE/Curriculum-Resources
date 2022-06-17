@@ -1,0 +1,57 @@
+#Helm will install an application with default values, but we can provide a values file to override some of the confiugration 
+#For grafana: we change the admin password, the root url and we provide it the PVC we made with the file "prometheus-grafana-pvc.yml"
+#(Make sure the existingClaim value matches the name of the pvc and that they are in the same namespace)
+
+#helm install <release> <repo>/<chart> -f <file>.yml -n <namespace> --create-namespace
+#helm install monitoring prometheus-community/kube-prometheus-stack -f kube-prometheus-grafana.yml -n monitoring --create-namespace
+
+#For prometheus and alertmanager, we specify how much resources they can take up (they can be resource hogs) and for prometheus 
+# we provide a storageSpec as prometheus creates its own pvc (you can check this by running "kubectl get pvc -n monitoring"
+
+#We also provide a monitor selector "matchLabels: prometheus: devops"
+#Make sure that any service monitor you create has the label: "prometheus: devops"
+
+grafana:
+  adminPassword: p4ssw0rd
+  enabled: true
+  grafana.ini:
+    server:
+      root_url: http://localhost/grafana
+  persistence:
+    enabled: true
+    existingClaim: prom-data-pvc
+    finalizers:
+    - kubernetes.io/pvc-protection
+    type: pvc
+  sidecar:
+    datasources:
+      enabled: true
+prometheus:
+  prometheusSpec:
+    serviceMonitorNamespaceSelector: {}
+    serviceMonitorSelector: 
+      matchLabels:
+        prometheus: devops
+    serviceMonitorSelectorNilUsesHelmValues: false
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          resources:
+            requests:
+              storage: 20Gi
+          storageClassName: gp2
+    retention: 12h
+    resources:
+      limits:
+        cpu: 500m
+        memory: 2048Mi
+alertmanager:
+  alertmanagerSpec:
+    retention: 1h
+    resources:
+      requests:
+        cpu: 10m
+        memory: 64Mi
+      limits:
+        cpu: 50m
+        memory: 256Mi

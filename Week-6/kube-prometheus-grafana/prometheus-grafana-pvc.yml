@@ -1,0 +1,20 @@
+#This is a Peristent Volume Claim file, because EKS is managed by AWS we don't need to provide a Persistent Volume. 
+#We're asking for 2 Gigs of space, in preperation for our grafana pod (in the monitoring namespace)
+#When we run this file initally, the storage will not by allocated until a resources asks for storage
+#Make sure to put the PVC in the same namespace as the resource that needs the volume
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prom-data-pvc
+  namespace: monitoring
+  labels:
+    app: prometheus
+
+#ReadWriteOnce means that only a single application can read and write to this storage
+spec:
+ accessModes:
+   - ReadWriteOnce
+ resources:
+   requests:
+      storage: 2Gi
