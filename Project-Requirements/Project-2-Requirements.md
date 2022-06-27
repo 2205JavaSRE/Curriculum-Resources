@@ -30,5 +30,5 @@ Teams are allowed to create a new namespace on our common AWS cluster for projec
     - The idea is to have visualizations that might indicate that a problem might occur soon, even if an alert has not fired yet
 5. Each team must have a full DevOps pipeline built using Jenkins
     - This pipeline must be configured through a Jenkinsfile and triggered in response to a webhook
-    - The project will be deployed with a canary deployment model
+    - The project will be deployed with a rolling update model
 6. Each team must utilize Terraform to provision resources to be able to deploy Jenkins on a stand alone server, seperate to the K8 cluster (i.e. on an EC2 instance) 
