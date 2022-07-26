@@ -1,0 +1,97 @@
+What is SRE?
+	System Reliability Engineer
+	Making sure the application keep running as intended with little to no interuption. 
+	We'll be responsible for handling any incidents, we'll have to organize a team to solve
+		those incidents. Eventually write a report, Post-Mortems. 
+	Do what they can do to automate tasks and deploy the applications, to help make it easier. 
+	Implementing monitoring as well, to know when an incident has happened. 
+
+	SRE is the software engineer approach to IT operations. Back in the day, System admins would 
+	be managing the IT operations side of things, they would have local hardware to maintain and 
+	manage as well as a lot of manual interventions. 
+
+	SRE work with cloud based infrastructure, software tools to maintain and manage the IT operations. 
+
+	Main tenets of SRE is automation and standardization. 
+	Automations side of things, we use tools such as kubernetes and CICD piplines like Jenkins to 
+	to deploy updates and scale our systems. 
+	Standardization is things like SLOs, SLIs and Error Budgets. They create a bridge between the 
+	software development teams and the DevOps teams. 
+
+
+SLA: 
+	Committment between service provider and client. 
+	SLAs include some service agreement, availablility and latency. We may also add error budget based 
+	on availability. 
+
+	Why do we use SLAs?
+		When we make a service level agreement, we are talking with a client to have a target level 
+		to aim for. 
+
+	What are problems with SLAs?
+		Client can have unrealistic expectations, e.g. 100% availability 
+		The SLA contract will be mostly created by the business and legal sides of each team - 
+		this will lead to vague or unrealistic expectations. 
+		(This can be mitigated by involving technical personal, such as an SRE engineer) 
+
+
+SLO: 
+	Service Level Objectives would be the specific target that we agreed on, as part of the SLA. 
+	It would be more specific, e.g. a 99% availability that would be an SLO. 
+
+	Why do we have SLOs?
+		To provide an internal goal for your team, e.g. for availability. 
+		If you fail your SLO, then you could fail your SLA. 
+		SLOs can be higher than the SLA, to allow quicker response. 
+
+	What are the problems with SLOs?
+		They can be unrealistic, or too vague
+
+
+SLI: 
+	Service Level Indicator, it is broadly what you are measuring. It is the metric itself, not 
+	necessarily a quantative value. 
+
+	SLI is a direct measurement of a service's behavior, if the SLI goes below the SLO then issues
+	are raised. 
+
+	Multiple metrics can be tracked, but choosing the right metrics to monitor can make your life 
+	a lot easier. Tracking unnecessary metrics ccan overcomplicate your work flow without much 
+	benefit to your team and to your clients. 
+
+	What happens when your SLIs are below your target? (to go over our error budget) 
+		First thing is to check for previous post mortems.
+		If not, then create an incident report. 
+
+Error Budget: 
+	Is the maximum amount of time that you can fail to meet your SLO before you are in violation of it
+	and the SLA. 
+
+	Why do we have an error budget?
+		All systems are going to fail, you're not going to have 0% errors.
+		This quantifies how much are acceptable, it can tell you to intervene. 
+		A good way of giving information to the SRE team. 
+
+
+	If you have 99.95% availability, then over a year you can afford to have about 8 hours of downtime. 
+	If you have "used up" 4 hour of downtime, then your error budget is now 0.5 
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
