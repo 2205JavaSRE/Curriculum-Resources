@@ -1,0 +1,100 @@
+SDLC?
+	Software Development Lifecycle 
+	Planning -> Development -> Testing -> Production 
+	    |
+	Analysis: Is there a problem out there to be solved? 
+	Requirements: What resources are estimated for this project. 
+	
+
+	Testing: 
+		static testing: load testing on the server
+		unit testing: testing the smallest unit of code, in java those
+				are methods. 
+		Performance testing 
+		Smoke testing 
+		Integration testing 
+
+
+With the SDLC, there are multiple approaches to it. Traditionally, teams and organizations
+have taken a linear approach to the SDLC, i.e. Waterfall methodology. 
+
+Waterfall methodology: 
+	You wait until you finish each phase of the project. You do all the development, 
+	then all the testing and then you deploy it all at once. 
+
+	Advantages: 
+		Simple approach, don't need to upskill your members. 
+
+	Disadvantages: 
+		*Can* be slow to any external pressures. 
+		e.g. business requirements change, issues with dvelopment or testing, 
+		we don't get to find out or change or approach quickly enough. 
+
+
+Agile Methodology: 
+	Converting the project into smaller pieces. 
+	Breaking down the phases into smaller aspects. 
+	Scrum, Daily standup are some of the practices we get. 
+
+	We break it down into sprints. We plan a feature to be done in a set amount 
+	of days. We can go through the SDLC in a short period of time, then we can 
+	move over to another feature. We'll get feedback on any possible issues much 
+	more quickly, allowing us to adapt faster. 
+
+	We have standups every sprint to keep track of the sprints and daily standups. 
+	(Daily feedback from team members on work)
+
+	Scrum and Kanban are frameworks built on top of Agile.
+		Kanban boards are really useful, as you can track the work and tasks 
+		done by everyone. 
+
+		scrumban is a combination of both. 
+
+	Advantages: 
+		Teams are much more responsive. 
+	
+	Disadvantages: 
+		It is complex, you need time to upskill personal. 
+		It is not effective within very large teams. 	
+
+
+
+DevOps: 
+	Practices, tools and a team philoshophy. Is to automate the deployment
+	process for easier scaling and faster feature/app deployment. 
+
+	
+	Every member of the team is responsbile for the development and the Ops
+	side of a feature/update/app. 
+	Collaboration between the development team and the Ops team. 
+	Instead of just developoing the code and passing it along, it feedbacks into 
+	the CICD pipeline. We want to constantly add/updates feature and bring them 
+	to the client(s). 
+
+	Practices: 
+		Agile Methodology 
+		CICD - Continous integration and Continous Delivery. 
+
+	Tools: 
+		Jenkins
+
+Jenkins: 
+	It's a tool that allows us to build scripts, that allows us build, compiling 
+	and testing the app. 
+	Jenkins is a open source automation server. Automates software development phases,
+	such as building, testing and deploying. 
+	We used Jenkins to build a CICD pipeline: 
+	CICD: 
+		Continous Integration :
+			When you make changes to the code, it is automatically integrated
+			to the code base (e.g. into our docker containers)
+		Continous Deployment 
+			Full automation, taking those integrated changes and deploying them
+			onto the server. 
+		Continous Delivery
+			Not fully automated, there is human approval step before the changes
+			is deployed to production. 
+			
+	
+	
+	

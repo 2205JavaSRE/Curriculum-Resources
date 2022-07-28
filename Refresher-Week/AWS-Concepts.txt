@@ -1,0 +1,104 @@
+AWS?
+	A cloud computing platform 
+	Offers clients cloud computer/services, databases 
+	Infrastructure, Platform and Software as a service. 
+
+IaaS?
+	Infrastructure (e.g. Compute instance, Storage) that you can rent and 
+	access over the internet. 
+	The ability to scale up and down as necessary. 
+	Instead of having to house your own hardware and hire the personal. 
+	You hire the infrastructure that are premade, house the resources you need. 
+	(e.g. EC2, EBS )
+
+PaaS?
+	Inbetween IaaS and SaaS, where the resource is partially managed by AWS. 
+	AWS will handle the hardware aspect of it, while providing some software 
+	configurability.  
+	(e.g. RDS, EKS) 
+
+SaaS?
+	Where both the infrastructure and software is managed by AWS. 
+	(e.g. Google Drive, Dropbox, Salesforce, Pega)
+
+EC2 ?
+	Elastic Cloud Computing
+	Have a server and a partion with an OS - you can connect to it. 
+	You can do anything with it using a CLI tool. 
+	When we create an EC2 we specify the hardware to be allocated and the AMI. 
+
+AMI?
+	Amazon Machine Image 
+	An operating system will have preset settings.
+	A template for the root volume of the instance (includes OS, an 
+	application server and applications).
+	Launch permissions that control which AWS accounts can use the AMI to 
+	lauch instances. 
+	Volume to be to attached to the instance when it's launched. 
+
+EBS?
+	Elastic Block Storage 
+	Stores all the information on the EC2 or the EKS. It acts a storage volume 
+	when attached to an EC2 and you can add a file system on top of these volumes. 
+	EBS good for database-style applications that relon on random reads and writes
+	and also for throughput-intensive applicaionts that perform long continous 
+	reads and writes. 
+
+RDS?
+	Relational Database System
+	We operate and scale database in the cloud. Amazon has support for multiple 
+	flavors of RDS, e.g. Postgresql, Oracle, MySql, etc ...
+	This is managed by Amazon, they'll provide a high level of durability, backups
+	and other useful features.  
+	Example of Platform as a service. 
+
+S3?
+	Simple Storage Service  
+	Designed to handle large volumes of static files. It is durable (99.9999999999%),
+	scalable (pay for what you use) and low cost compared to other storage solutions. 
+	It's useful for backing up data and for any data that is infrequently accessed. 
+	Example of PaaS. 
+
+EKS ?
+	Elastic Kubernetes Service is a managed Kubernetes cluster by Amazon. 
+	It provisions Load Balancers, computer instances and pods (Application
+	Container instances). We can configure the computer instances and the runtime
+	conditions of our pods. 
+	Also has support for deployment strategies as Kubernetes, we can use the 
+	Kubernetes Cluster Autoscaler to scale the compute instances. 
+	We can use the Kubernetes Horizontal or Vertical Pod autoscaler. 
+
+	Cluster of computers, that can be scaled up or down to meet your needs. 
+	USeful for container management tools, so that you can deploy your apps. 
+	EC2 is a single instance, EKS it can be multiple instances to your preset limits.
+
+VPC?
+	Virtual Private Cloud, it's a virtual network that allows us to create a pool 
+	of shared resources within a public cloud environvment. It provides isolation 
+	between your differenet resource in an organization and also allow us to 
+	define subnets. 
+
+Subnet: 
+	A subnet is a range of IP addresses in your VPC. Public subnets can expose your
+	resources over the internet while private subnets will restrict traffic to 
+	internal VPC traffic. Each subnet must reside entirely within one Availability 
+	zone. By launching instances in seperate Availabiliy zone, we can protect our
+	app from failutre. 
+
+Availability: 
+	The percentage of time that a workload/service is available for use. 
+	Availability = Available for use time/ Total time 
+
+	To measure availability : 
+		Availability = successful responses/ Total requests 
+
+	If a system is reliant on another system, i.e. hard dependencies. 
+	Availability is calculated by measuring all systems availability and multilpling them. 
+	
+	Ava1 * Ava2 * Ava3 = Ava123
+
+	Calculating with redundant components 
+
+	Calculating dependency availability based on time between failure and time to recover
+	(MTBF and MTTR) 
+	
